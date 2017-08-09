@@ -4,7 +4,7 @@ ENV GOREL go1.7.3.linux-amd64.tar.gz
 ENV PATH $PATH:/usr/local/go/bin
 
 RUN apt-get update && apt-get install -y
-RUN apt-get install -y software-properties-common wget git make gcc libsodium-dev build-essential libdb-dev zlib1g-dev libtinfo-dev sysvbanner wrk psmisc curl dnsutils
+RUN apt-get install -y software-properties-common wget git make gcc libsodium-dev build-essential libdb-dev zlib1g-dev libtinfo-dev sysvbanner wrk psmisc
 RUN add-apt-repository -y ppa:ethereum/ethereum && apt-get update && apt-get install -y solc
 RUN wget -q https://github.com/jpmorganchase/constellation/releases/download/v0.1.0/constellation-0.1.0-ubuntu1604.tar.xz && tar -xvf constellation-0.1.0-ubuntu1604.tar.xz
 
