@@ -15,8 +15,8 @@ RUN tar -xvzf ${GOREL}
 RUN mv go /usr/local/go
 RUN rm ${GOREL}
 
-RUN git clone https://github.com/jpmorganchase/quorum.git
-RUN cd quorum && git checkout tags/v1.2.0 && make all && cp build/bin/geth /usr/local/bin && cp build/bin/bootnode /usr/local/bin
+RUN git clone --depth 1 --recursive -b v1.2.0 https://github.com/jpmorganchase/quorum.git
+RUN cd quorum && make all && cp build/bin/geth /usr/local/bin && cp build/bin/bootnode /usr/local/bin
 
 RUN cd /
 RUN git clone https://github.com/jpmorganchase/quorum-examples
